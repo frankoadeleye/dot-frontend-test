@@ -2,6 +2,7 @@ import {
   ModalBlock,
   ModalContentBlock,
   Close,
+  ModalTextContent,
 } from "src/styles/components/modal";
 
 function Modal(props) {
@@ -16,7 +17,7 @@ function Modal(props) {
     <ModalBlock onClick={closeModal} style={divStyle}>
       <ModalContentBlock onClick={(e) => e.stopPropagation()}>
         <Close onClick={closeModal}>&times;</Close>
-        {props.children}
+        <ModalTextContent>{props.children}</ModalTextContent>
       </ModalContentBlock>
     </ModalBlock>
   );

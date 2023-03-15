@@ -28,6 +28,17 @@ export const ModalContentBlock = styled.div`
   }
 `;
 
+export const ModalTextContent = styled.div`
+  height: 90%;
+  overflow-y: scroll;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+`;
+
 export const Close = styled.span`
   color: #aaaaaa;
   float: right; /* Positioned to the right of the parent container whichever size it is */

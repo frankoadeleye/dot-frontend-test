@@ -6,7 +6,6 @@ export const VotesResult = styled.div`
   flex-direction: column;
   width: 90%;
   margin: auto;
-  margin-top: 50px;
   font-size: 18px;
   line-height: 28px;
 `;
