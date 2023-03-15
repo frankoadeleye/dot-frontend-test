@@ -1,18 +1,14 @@
-import './App.css';
-import Ballot from './Components/Ballot/Ballot';
+import VotingPage from "src/pages/voting";
+import theme from "src/utils/contants/theme";
+import GlobalStyles from "src/utils/contants/global-styles";
+import { ThemeProvider } from "styled-components";
 
 function App() {
-  // Feel free to remove the contents of the header tag to make more room for your code
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={'https://via.placeholder.com/150'} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
-      <Ballot />
-    </div>
+    <ThemeProvider theme={theme}>
+      <VotingPage />
+      <GlobalStyles />
+    </ThemeProvider>
   );
 }
 

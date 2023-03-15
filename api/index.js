@@ -1,4 +1,5 @@
 const Koa = require('koa');
+const cors = require('@koa/cors');
 const Router = require('koa-router');
 
 const app = new Koa();
@@ -7,11 +8,9 @@ const port = process.env.PORT || 8080;
 
 const generateBallotData = () => {
   return {
-    items: [
-      {
+    items: [{
         id: "best-picture",
-        items: [
-          {
+        items: [{
             title: 'Nomadland',
             photoUrL: 'https://variety.com/wp-content/uploads/2020/12/nomadland_ver2.jpg',
             id: 'nomadland'
@@ -41,8 +40,7 @@ const generateBallotData = () => {
       },
       {
         id: "best-director",
-        items: [
-          {
+        items: [{
             title: 'Chloé Zhao for Nomadland',
             photoUrL: 'https://variety.com/wp-content/uploads/2020/12/nomadland_ver2.jpg',
             id: 'chloe-zhao'
@@ -72,8 +70,7 @@ const generateBallotData = () => {
       },
       {
         id: "best-actor",
-        items: [
-          {
+        items: [{
             title: 'Chadwick Boseman for Ma Rainey\'s Black Bottom',
             photoUrL: 'https://variety.com/wp-content/uploads/2020/12/ma_raineys_black_bottom_ver2.jpg',
             id: 'chadwick-boseman'
@@ -103,8 +100,7 @@ const generateBallotData = () => {
       },
       {
         id: "best-actress",
-        items: [
-          {
+        items: [{
             title: 'Vanessa Kirby for Pieces of a Woman',
             photoUrL: 'https://variety.com/wp-content/uploads/2020/12/pieces_of_a_woman.jpg',
             id: 'vanessa-kirby'
@@ -134,8 +130,7 @@ const generateBallotData = () => {
       },
       {
         id: "best-supporting-actor",
-        items: [
-          {
+        items: [{
             title: 'Daniel Kaluuya for Judas and the Black Messiah',
             photoUrL: 'https://variety.com/wp-content/uploads/2020/12/judas_and_the_black_messiah.jpg',
             id: 'daniel-kaluuya'
@@ -165,8 +160,7 @@ const generateBallotData = () => {
       },
       {
         id: "best-supporting-actress",
-        items: [
-          {
+        items: [{
             title: 'Olivia Colman for The Father',
             photoUrL: 'https://variety.com/wp-content/uploads/2020/12/father_ver3.jpg',
             id: 'olivia-coleman'
@@ -196,8 +190,7 @@ const generateBallotData = () => {
       },
       {
         id: "best-visual-effects",
-        items: [
-          {
+        items: [{
             title: 'The Midnight Sky',
             photoUrL: 'https://variety.com/wp-content/uploads/2020/12/midnight_sky_ver2.jpg',
             id: 'midnight-sky'
@@ -237,6 +230,8 @@ router.get('/', (ctx, next) => {
 router.get('/api/getBallotData', (ctx, next) => {
   ctx.body = ballotData;
 });
+
+app.use(cors());
 
 app
   .use(router.routes())
