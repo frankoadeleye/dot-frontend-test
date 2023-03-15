@@ -3,9 +3,7 @@
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 
-## View Recorded Demo
-
-[here](https://vimeo.com/808222444/833e5fc587)
+## View Recorded Demo [here](https://vimeo.com/808222444/833e5fc587)
 
 ## Available Scripts
 
